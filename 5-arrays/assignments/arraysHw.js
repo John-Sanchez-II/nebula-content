@@ -16,22 +16,22 @@ const week = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 
 
 console.log(week.length)
 // 5.   log the 4th element in the array
-console.log(week[4])
+console.log(week[3])
 
 
 // 6.   Remove the first element in the array. Log the new array and the element removed from the array
-console.log(week[0])
-const first = week.shift()
+
+week.shift()
 console.log(first)
 // 7.   Put 'Sunday' back at the beginning of the array and log the new array
-const back = week.unshift("Sunday")
+week.unshift("Sunday")
 console.log(week)
 // 8.   Remove the last element in the array. Log the new array and log the element removed
-const last = week.pop()
+week.pop()
 console.log(week)
-console.log(last)
+
 // 9.   Add 'Saturday' back to the end of the array and log the new array
-const end = week.push("Saturday")
+week.push("Saturday")
 console.log(week)
 //10.   Replace 'Thursday' with 'Friday Junior'
 week[4] = "Friday Junior"
