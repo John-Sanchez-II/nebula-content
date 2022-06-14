@@ -18,3 +18,6 @@ class Animal {
 
     console.log(spiritBear.creature())
 
+class Shape {
+    constructor( surfaceArea, volume)
+}

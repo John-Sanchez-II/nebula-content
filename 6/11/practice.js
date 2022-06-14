@@ -54,3 +54,16 @@ class Fruit {
 const cherry = new Fruit( 'cherry', 'red', true);
 console.log(cherry.makeJuice());
 
+class Vegetables extends Fruit {
+    constructor(name, color, seeded, isSweet){
+    super(name, color, seeded);
+    this.isSweet = isSweet;
+}
+}
+    const celery = new Vegetables('celery', 'green', false, false);
+
+celery.makeJuice()
+
+const cucumber = new Vegetables("cucumber", 'green', true, false);
+cucumber.bite()
+
