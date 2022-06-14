@@ -63,6 +63,26 @@ const tri1 = new Triangle("Triangle", 3, 54, 77, 8);
 
 console.log("The area of our triangle is " + tri1.calculateTriangleArea())
 
+class Trapezoid extends Shapes{
+    constructor(name, sides, height, width, base, base2){
+        super(name, sides, height, width)
+        this.base= base
+        this.base2=base2
+    }
+    calculateTrapezoidArea(){
+        return ((this.base + this.base2) * this.height)/2
+    }
+
+    printStatment(){
+        console.log("Given a " + this.name + " with a base of " + this.base + " and a second base of " + this.base2 + " it will also have a height of " + this.height + " It's total area is " + this.calculateTrapezoidArea() )
+    }
+
+}
+
+const Trap1 = new Trapezoid("Trapezoid", 2, 18, 5, 20, 13);
+
+Trap1.printStatment()
+
 
 //     structure(){
 //         console.log( `Given a ${this.name} with a height of ${this.height} and a base of ${this.base} What would be the Area? `)

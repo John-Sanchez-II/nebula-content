@@ -106,3 +106,7 @@ console.log(msDragon.assignmentsToGrade)
 
 nedNarc.handInAssignment(msDragon, "Suagr Cookies")
 console.log(msDragon.assignmentsToGrade)
+
+// extend 2 more people classes from the person class as well as an environment for this class objects to interact in
+// ex. nurse/chef/patient/chef/waiter/restaurant or whatever we can come up with
+// 02 user-forum, for reading 
