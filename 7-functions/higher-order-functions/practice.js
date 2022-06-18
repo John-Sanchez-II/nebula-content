@@ -106,9 +106,7 @@ const subAll = (num1, num2, num3, num4, num5) => {
 console.log(calculateAll1(1, 2, 3, 4, 5, multiAll))
 console.log(calculateAll1(1, 2, 3, 4, 5, subAll))
 
-// const calculateAll2 = (func, arguments) => {
-// return ansa = 
-// }
+
 
 function modify(str, func) {
     const newStr = func(str)
@@ -116,24 +114,177 @@ function modify(str, func) {
 }
 
 function yeller(str) {
-const yellerNew = str.toUpperCase()
-return yellerNew + "!!!"
+    const yellerNew = str.toUpperCase()
+    return yellerNew + "!!!"
 
 }
 
 console.log(modify("It's Thursday", yeller))
 
 
-function code (str){
+function code(str) {
     let codeNew = " "
-    for (i=0; i < str.length; i++){
-        if (str[i] === "a" || str[i] === "e"|| str[i] === "i"|| str[i] === "o"|| str[i] === "u"){
+    for (i = 0; i < str.length; i++) {
+        if (str[i] === "a" || str[i] === "e" || str[i] === "i" || str[i] === "o" || str[i] === "u") {
             codeNew += "-"
-        }else{
+        } else {
             codeNew += str[i]
         }
     }
     return codeNew;
 }
 console.log(modify("It's Thursday", code))
+
+
+function calculateAll2(func, ...args) {
+    const calc3 = func(...args);
+    return calc3;
+}
+
+function mutiply() {
+    console.log(arguments)
+    let product = 1
+    for (let i = 0; i < arguments.length; i++) {
+        product += arguments[i]
+    }
+    return product
+}
+
+
+
+function subtract() {
+    console.log(arguments)
+    let sum = arguments[0]
+    for (let i = 0; i < arguments.length; i++) {
+        sum -= arguments[i]
+    }
+    return sum
+}
+
+function add() {
+    console.log(arguments)
+    let sum = 0
+    for (let i = 0; i < arguments.length; i++) {
+        sum += arguments[i]
+    }
+    return sum
+}
+
+console.log(calculateAll2(mutiply, 3, 4, 5, 6, 7))
+console.log(calculateAll2(subtract, 3, 4, 5, 6, 7))
+console.log(calculateAll2(add, 3, 4, 5, 6, 7))
+
+
+const ourArray = [4, 8, 9, 2, 1, 6];
+
+// ourArray.forEach((ourArray) => console.log(ourArray * 2))
+
+const changeNums = (arr, func) => {
+    const newArr = []
+    for (let i = 0; i < arr.length; i++) {
+        let currentElement = arr[i]
+        newArr.push(func(currentElement))
+    }
+    return newArr;
+}
+function doubler(n) {
+    return n * 2
+}
+
+function halve(n) {
+    return n / 2
+
+}
+
+function squared(n) {
+    return n **= 2
+}
+
+console.log(changeNums(ourArray, doubler));
+console.log(changeNums(ourArray, halve));
+console.log(changeNums(ourArray, squared));
+
+
+const ourString = "We are stronger when We listen and smarter when We share!"
+
+function stringInfo(str, func) {
+    return func(str);
+}
+
+function length(str) {
+    return str.length;
+}
+
+const vowels = (str) =>{
+    let vowelsCount = 0
+    for (let i = 0; i< str.length; i++){
+        if (str[i] === "a" || str[i] === "e" || str[i] === "i" || str[i] === "o" || str[i] === "u"){
+            vowelsCount ++
+    }
+}
+return vowelsCount
+}
+
+function capitals (str){
+    let capsCount = 0
+    for (let i = 0; i< str.length; i++){
+        if (str[i] === str[i].toUpperCase()){
+            capsCount += 1
+        }
+    }
+return capsCount
+}
+
+
+console.log(stringInfo(ourString, length))
+console.log(stringInfo(ourString, vowels))
+console.log(stringInfo(ourString, capitals))
+
+const numArr = [2, 3, 5, 8]
+
+const minimizeNums = (arr, func) => {
+    return func(arr)
+}
+function add(arr){
+    let sum = 0
+    for(let i = 0; i< arr.length; i++){
+        sum += arr[i]
+}
+return sum
+}
+console.log(minimizeNums(numArr, add))
+
+const nums = [5, 3, 4, 2, 10, 11];
+  
+const pow = cur => cur **2
+const storePow = nums.map(pow)
+console.log(storePow)
+
+const strs = ["Hi", "Hola", "Ciao", "Bonjour"]
+
+let capS = curr => curr.toUpperCase()
+const storeCaps = strs.map(capS)
+console.log(storeCaps)
+
+const ppl = ["Sponge", "Patrick", "Squidward", "Krabs"]
+
+function greet(el){
+    return `Hello ${el} !`
+}
+const store = ppl.map(greet)
+
+console.log(store)
+
+const nums2 =  [1, 2, 3, 4, 5, 6]
+
+function print(el){
+    console.log(el)
+}
+
+nums2.forEach(print)
+
+const ppL = ["Sponge", "Patrick", "Squidward", "Krabs"]
+
+ppl.forEach(element => console.log("Goodbye " + element))
+
 
