@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=`, initial-scale=1.0">
+ <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <Script>
+        const trick =[
+    {title: "Trick 1", body: "Tada!!!"}
+]
+function magic(){
+    setTimeout( () => {
+        let output = " ";
+        trick.forEach( (post) => {
+            output+= `<li>${trick.title}: ${post.body}</li>`
+        })
+        const bin = document.querySelector(`.bin`)
+        bin.innerHTML= output
+    }, 5000 )
+}
+    </Script>
+    
+
+
+
+
+
+    
+</body>
+</html>
