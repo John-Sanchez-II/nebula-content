@@ -1,5 +1,10 @@
-console.log(cleanedDishes)
-setTimeout(() => { console.log(cleanedDishes)}, 5001)
+// promises are asyncronous
+// "new" is an object
+
+
+
+// console.log(cleanedDishes)
+// setTimeout(() => { console.log(cleanedDishes)}, 5001)
 
 
 // you and a friend want to have dinner
@@ -43,29 +48,29 @@ let myPromise = new Promise( (resolve, reject) => {
         
     })
     
-console.log (duetPromise)
+// console.log (duetPromise)
 // 3.   Create a new promise for something you may or may not do. 
 //      After a few seconds log whether it has been done.
 
 
 // 4.   Using the prior example use .then and .catch to handle responses and rejections
 
-let duetpromise = new Promise(function (resolve)  {
-        setTimeout(()=> resolve 
-                ("I can finally match your pitch"),1000)
-             })
+// let duetpromise = new Promise(function (resolve)  {
+//         setTimeout(()=> resolve 
+//                 ("I can finally match your pitch"),1000)
+//              })
 
-    duetpromise.then(
-        result=> alert(result),
-        error => alert (error)
-    )
+//     duetpromise.then(
+//         result=> alert(result),
+//         error => alert (error)
+//     )
 // 5.   What does a promise resolve do?
 // returns a Promise object that is resolved with a given value
 
 // 6.   Using HTML & CSS, write a promise that, after 5 seconds changes the existing text on the web-page
-const trick =[
-    {title: "Trick 1", body: "Tada!!!"}
-]
+// const trick =[
+//     {title: "Trick 1", body: "Tada!!!"}
+
 function magic(){
     setTimeout( () => {
         let output = " ";
@@ -77,6 +82,20 @@ function magic(){
     }, 5000 )
 }
 
+// 6a create another promise that changes the styling of one of the html elements
+
+
+function changeText() {
+    return new Promise ( (resolve, reject) => {
+        {
+            setTimeout( ()=> {
+                if (h2.innerHTML){
+                    h2.innerHTML = "I've changed!"
+                }
+            })
+        }
+    })
+}
 // 7. What is the output of the following code?
 const promise = new Promise(res => res(2));
 promise.then(v => {
@@ -98,3 +117,40 @@ promise.then(v => {
 // 2
 // 4
 // not sure what it's asking
+
+// 8.
+const hopeful = document.getElementById('thinking')
+
+function changeText() {
+    return new Promise( (resolve, reject) => {
+        setTimeout( () => {
+            if (hopeful.innerHTML){
+                resolve(hopeful.innerHTML = "I'VE DONE IT!");
+            } else {
+                reject('Nothing happened')
+            }
+        }, 4000)
+    })
+}
+
+let yayPromise = changeText(true)
+yayPromise.then(success => console.log(success)).catch(error => console.log(error))
+
+
+const hot = document.getElementById('fire')
+
+function onARoll() {
+    return new Promise( (resolve, reject) => {
+        setTimeout( () => {
+            if (hot.innerHTML){
+                resolve(hot.innerHTML = "Im on Fiyah!!!");
+            } else {
+                reject('Nothing happened')
+            }
+        }, 6000)
+    })
+}
+
+let hotPromise = onARoll(true)
+hotPromise.then(success => console.log(success)).catch(error => console.log(error))
+
