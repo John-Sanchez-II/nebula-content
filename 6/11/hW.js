@@ -76,7 +76,7 @@ class Doctor extends Person {
         console.log("Hello, I'm Dr. " + this.name + ". I'm the " + this.specialty + " for the school " + ". Welcome to room " + this.roomNumber + ", before I can help you, I'm going to need the room number your from. " )
     }
 
-    addpatient(patient, doctor) {
+    addPatient(patient, doctor) {
         doctor.addPatientToOffice(patient, this.name)
 
     }
@@ -90,10 +90,12 @@ class Patient extends Person {
         // this.diagnosis = diagnosis;
     }
     help() {
-        console.log("Hi...  " + "My name is " + this.name + ". I'm " + this.age + " years old. " + " I'm from room " + this.roomNumber +", I'm feeling a " + this.symptoms)
+        console.log("Hi...  " + "My name is " + this.name + ". I'm " + this.age + " years old. " + " I'm from room " + this.roomNumber +", I have " + this.symptoms)
     }
 
 }
+
+
 // new class
 class Office {
     constructor(roomNumber, entranceMethod) {
@@ -110,9 +112,10 @@ class Office {
     addPatientToOffice(patient, doctor) {
         patient.doctor = doctor
         this.patientList.push(patient)
-        this.patientCount++
+        this.patientsSick++
 
     }
+
 }
 
 
@@ -121,20 +124,26 @@ const drPepper = new Doctor("Pepper", 45, 432, "Pediatrician")
 const drAtchoo = new Doctor("Atchoo", 50, 396, "Therapist")
 
 const nStark = new Patient("Ned Stark", 10, 220, "Headache")
-const rBaratheon = new Patient("Robert Baratheon", 9, 310, "stressed")
+const rBaratheon = new Patient("Robert Baratheon", 9, 310, "stress")
 
 const Office432 = new Office(432, "kicked Open")
 const Office396 = new Office(396, "opens before knocking")
 
-drPepper.addpatient(nStark, Office432)
-drAtchoo.addpatient(rBaratheon, Office396)
+drPepper.addPatient(nStark, Office432)
+drAtchoo.addPatient(rBaratheon, Office396)
 
 
 console.log(Office432.patientList)
 console.log(Office396.patientList)
+Office432.showPatientsSick();
+
 
 drPepper.greet();
 nStark.help();
+
+drAtchoo.greet();
+rBaratheon.help();
+
 
 
 // how to add name of doctor to patients dialogue

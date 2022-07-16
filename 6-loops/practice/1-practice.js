@@ -15,7 +15,7 @@ for(let i = 1; i <= 41; i+=2){
 // //      Loop over the array and log each student's name to the console.
 // //      Inside the array declare an unrequired, but useful variable for 'currentStudent'
 const classR = ( Chanel, Odalis, Aleisha, Armani)
-for(let )
+for(let ){}
 
 
 // // 4.   Use the array below for the following question

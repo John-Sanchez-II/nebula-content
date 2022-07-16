@@ -288,3 +288,39 @@ const ppL = ["Sponge", "Patrick", "Squidward", "Krabs"]
 ppl.forEach(element => console.log("Goodbye " + element))
 
 
+// 3.   Given an array of mixed values, log whether the value is undefined.
+
+const arr3 = ["hi", 23, 56, 7, true, 0, [], "boo"]
+
+arr3.forEach(element => console.log(typeof(element)))
+
+// 4.   Given an array of strings, log the vowel count for each string.
+// const arr4 = ["apple", "umbrella", "card", "mango"]
+
+// function code(arr4) => {
+//     let codeN = 0
+//     for (i = 0; i < arr4.length; i++) {
+//         for(j = 0; j< arr4[i].length; i++) (arr4[i] === "a" || arr4[i] === "e" || arr4[i] === "i" || arr4[i] === "o" || arr4[i] === "u") {
+//             codeN += 0
+//         }
+
+//     }
+//     console.log(codeN)
+// }
+// arr4.forEaxh(code)
+
+
+// 5.   Given an array of numbers, double them and log them to the console. 
+const vals = [2, 4, 6, 8, 10, 12]
+
+vals.forEach(element => console.log(element * 2))
+
+const movies = ["Lord of the Rings", "The Matrix", "Harry Potter", "Star Wars", "Terminator", "Final Destination"]
+let favorite = movies[5]
+
+console.log(favorite)
+
+const meNums = ([8, 5, 7, 6, 9, 7,3])
+const mean = meNums.reduce((a,b) => a + b, 0)/ meNums.length
+console.log(mean)
+
